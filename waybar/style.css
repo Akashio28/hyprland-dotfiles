@@ -1,0 +1,215 @@
+/* ══════════════════════════════════════════════════
+ *   BLACK + WHITE - COMPACT THIN BAR
+ *   ══════════════════════════════════════════════════ */
+
+* {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+    font-family: "JetBrains Nerd Font", monospace;
+    font-size: 12px;
+    min-height: 0;
+}
+
+/* ── MAIN BAR ─────────────────────────────────── */
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+/* ── TOOLTIP ──────────────────────────────────── */
+tooltip {
+    background: #11111b;
+    border: 1px solid #3b3b4f;
+    border-radius: 100px;
+}
+tooltip label {
+    color: #ffffff;
+    padding: 4px 8px;
+}
+
+/* ── WORKSPACES CONTAINER ─────────────────────── */
+#workspaces {
+background: #11111b;
+border: 1px solid #2a2a3a;
+border-radius: 17px;
+padding: 1px 40px;
+margin: 4px 4px;
+}
+
+/* ── WORKSPACES BUTTON - DYNAMIC SIZE ─────────── */
+#workspaces button {
+padding: 4px 6px;
+margin: 4px 1px;
+background: transparent;
+color: #ffffff;
+border-radius: 20px;
+transition: all 0.2s ease;
+font-size: 11px;
+font-weight: 500;
+min-width: 24px;
+}
+
+/* Saat ada window (aktif/focused) - jadi BESAR */
+#workspaces button.active,
+#workspaces button.focused {
+background: rgba(255, 255, 255, 0.1);
+color: #ffffff;
+border-radius: 20px;
+padding: 4px 16px;
+min-width: 40px;
+box-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+/* Saat hover */
+#workspaces button:hover {
+background: rgba(255, 255, 255, 0.15);
+color: #ffffff;
+}
+
+/* Urgent workspace */
+#workspaces button.urgent {
+background: rgba(243, 139, 168, 0.5);
+color: #f38ba8;
+}
+
+/* ── ALL MODULES (kecuali network) ────────────── */
+#clock,
+#battery,
+#pulseaudio,
+#backlight,
+#custom-swaync,
+#tray,
+#custom-nix,
+#custom-bluetooth,
+#cava {
+background: #11111b;
+color: #ffffff;
+border: 1px solid #2a2a3a;
+border-radius: 19px;
+padding: 10px 20px;
+margin: 4px 2px;
+transition: all 0.2s ease;
+}
+
+/* ── NETWORK MODULE ───────────────────────────── */
+#network {
+background: #11111b;
+color: #ffffff;
+border: 1px solid #2a2a3a;
+border-radius: 19px;
+padding: 10px 20px;
+margin: 4px 2px;
+font-weight: 500;
+transition: all 0.2s ease;
+}
+
+/* Hover all modules */
+#clock:hover,
+#battery:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#custom-swaync:hover,
+#custom-nix:hover,
+#custom-bluetooth:hover,
+#network:hover {
+background: #ffffff;
+color: #11111b;
+}
+
+/* Status WIFI */
+#network.wifi {
+color: #89dceb;
+}
+#network.wifi:hover {
+color: #11111b;
+}
+
+/* Status Ethernet */
+#network.ethernet {
+color: #a6e3a1;
+}
+#network.ethernet:hover {
+color: #11111b;
+}
+
+/* Status Disconnected */
+#network.disconnected {
+color: #f38ba8;
+}
+#network.disconnected:hover {
+color: #11111b;
+}
+
+/* Status Disabled */
+#network.disabled {
+color: #45475a;
+}
+#network.disabled:hover {
+color: #11111b;
+}
+
+/* ── CAVA ─────────────────────────────────────── */
+#cava {
+color: #ffffff;
+padding: 4px 8px;
+font-size: 10px;
+letter-spacing: 1px;
+}
+
+#cava:hover {
+background: #ffffff;
+color: #11111b;
+}
+
+/* ── TRAY ─────────────────────────────────────── */
+#tray {
+padding: 6px 8px;
+}
+
+#tray > .passive {
+-gtk-icon-effect: dim;
+}
+
+/* ── BATTERY STATES ───────────────────────────── */
+#battery.charging {
+color: #a6e3a1;
+border-color: #2a2a3a;
+}
+
+#battery.warning:not(.charging) {
+color: #fab387;
+border-color: #2a2a3a;
+}
+
+#battery.critical:not(.charging) {
+color: #f38ba8;
+border-color: #2a2a3a;
+animation: blink 0.6s linear infinite alternate;
+}
+
+/* ── MODUL LAINNYA (warna khusus) ─────────────── */
+#bluetooth { color: #89b4fa; }
+#cpu    { color: #a6e3a1; }
+#memory { color: #89dceb; }
+#pulseaudio.muted { color: #f38ba8; }
+
+/* ── WINDOW MODULE (tanpa border) ─────────────── */
+#window,
+window#waybar.empty #window,
+window#waybar.solo #window,
+window#waybar.floating #window,
+window#waybar.fullscreen #window {
+    border: none;
+    background: transparent;
+}
+
+#window {
+color: #6c7086;
+font-size: 11px;
+}
+
+/* ── BLINK ANIMATION ──────────────────────────── */
+@keyframes blink {
+    to { opacity: 0.35; }
+}

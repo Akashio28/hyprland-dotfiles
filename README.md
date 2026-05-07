@@ -14,9 +14,4 @@
 - **Wlogout** - Logout menu
 
 ## 🚀 Install
-Clone repo ini lalu copy folder yang diinginkan ke `~/.config/`
-```bash
-git clone https://github.com/USERNAME/dotfiles.git
-cp -r dotfiles/hypr ~/.config/
-# dst...
-```
+git clone https://github.com/Akashio28/hyprland-dotfiles.git && cd hyprland-dotfiles && bash install.sh

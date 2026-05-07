@@ -59,4 +59,3 @@ bash install.sh
 
 ---
 
-## 📁 Folder Structure
